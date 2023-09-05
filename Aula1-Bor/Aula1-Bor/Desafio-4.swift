@@ -24,6 +24,7 @@ struct Desafio_4: View {
             .padding(.bottom)
         
         Spacer()
+        
         TextField("Insira seu peso: ", text: $peso)
             .multilineTextAlignment(.center)
             .keyboardType(.decimalPad)
@@ -34,6 +35,7 @@ struct Desafio_4: View {
             .padding(.top, -80)
         
         Spacer()
+        
         TextField("Insira sua altura: ", text: $altura)
             .multilineTextAlignment(.center)
             .keyboardType(.decimalPad)
@@ -42,6 +44,7 @@ struct Desafio_4: View {
             .cornerRadius(10)
             .textContentType(.oneTimeCode)
             .padding(.top, -130)
+        
         Spacer()
         
         Button("Calcular") {
@@ -66,7 +69,8 @@ struct Desafio_4: View {
                 IMC = "Inválido"
             }
         }
-        .padding(.top, -170)
+            .padding(.top, -170)
+        
         
         Spacer()
         Text(IMC)
@@ -74,12 +78,12 @@ struct Desafio_4: View {
             .padding(.top, -170)
             .font(.title)
         
-        
         Image("tabela-IMC")
             .resizable()
             .scaledToFit()
             .frame(width: 450)
             .shadow(radius: 20)
+        
             }
         }
     }

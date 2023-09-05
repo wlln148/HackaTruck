@@ -9,28 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-                Image("caminhao")
-                .resizable()
-                .scaledToFit()
-                .padding()
-            Text("HackaTruck")
-                .foregroundColor(.blue)
-                .font(.title)
-            HStack {
-                Text("Maker")
-                    .foregroundColor(.yellow)
-                Text("Space")
-                    .foregroundColor(.red)
-            }
-            
+        
+        TabView {
+            d1()
+                .tabItem {
+                    Label("Received", systemImage: "tray.and.arrow.down.fill")
+                }
+            d3()
+                .tabItem {
+                    Label("Sent", systemImage: "tray.and.arrow.up.fill")
+                }
+            d2()
+                .tabItem {
+                    Label("Account", systemImage: "person.crop.circle.fill")
+                }
         }
-        .padding()
     }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+        struct ContentView_Previews: PreviewProvider {
+            static var previews: some View {
+                ContentView()
+        }
     }
 }
