@@ -21,6 +21,7 @@
 		3FB4AB412AA66AEC0001FA16 /* test2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB4AB402AA66AEC0001FA16 /* test2.swift */; };
 		3FB4AB432AA66B010001FA16 /* test3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB4AB422AA66B010001FA16 /* test3.swift */; };
 		3FB4AB452AA66DD90001FA16 /* test4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB4AB442AA66DD90001FA16 /* test4.swift */; };
+		3FF9675D2AA7B663008058F0 /* Spotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF9675C2AA7B663008058F0 /* Spotify.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		3FB4AB402AA66AEC0001FA16 /* test2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test2.swift; sourceTree = "<group>"; };
 		3FB4AB422AA66B010001FA16 /* test3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test3.swift; sourceTree = "<group>"; };
 		3FB4AB442AA66DD90001FA16 /* test4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test4.swift; sourceTree = "<group>"; };
+		3FF9675C2AA7B663008058F0 /* Spotify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spotify.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,9 +74,10 @@
 			isa = PBXGroup;
 			children = (
 				3FB4AB422AA66B010001FA16 /* test3.swift */,
-				3FB4AB402AA66AEC0001FA16 /* test2.swift */,
 				3FB4AB3E2AA66AE00001FA16 /* teste1.swift */,
+				3FF9675C2AA7B663008058F0 /* Spotify.swift */,
 				3FB4AB3C2AA668180001FA16 /* D2W2.swift */,
+				3FB4AB402AA66AEC0001FA16 /* test2.swift */,
 				3FB4AB442AA66DD90001FA16 /* test4.swift */,
 				3FB4AB3A2AA664700001FA16 /* d3.swift */,
 				3FB4AB362AA65E060001FA16 /* d2.swift */,
@@ -168,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FB4AB3B2AA664700001FA16 /* d3.swift in Sources */,
+				3FF9675D2AA7B663008058F0 /* Spotify.swift in Sources */,
 				3FB4AB3F2AA66AE00001FA16 /* teste1.swift in Sources */,
 				3F4755142AA1032600D0E796 /* ContentView.swift in Sources */,
 				3F624DFC2AA126C500A50934 /* D3.swift in Sources */,
