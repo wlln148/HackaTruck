@@ -14,6 +14,7 @@ struct Mapas: View {
     @State private var Regiao = MKCoordinateRegion(center:
     CLLocationCoordinate2D(latitude: -14.2350, longitude: -51.9253),
     span: MKCoordinateSpan(latitudeDelta: 01, longitudeDelta: 01))
+    @State private var sheet = false
     
 struct Local: Identifiable {
         let id = UUID()
@@ -38,14 +39,30 @@ var locations = [
                 .multilineTextAlignment(.center)
             
             VStack {
-                Map(coordinateRegion: $Regiao, annotationItems: locations) {
-                    MapMarker(coordinate: $0.coordenada)
-                }
-            }
-                Spacer()
+                Map(coordinateRegion: $Regiao, annotationItems: locations){ i in
+                    MapAnnotation(coordinate: i.coordenada) {
+                    Image(systemName: "info.circle.fill")
+                            .font(.system(size: 35))
+                        .frame(width: 400)
+                        .onTapGesture {
+                            sheet.toggle()
+                        }
+                                Text("\(i.nome)")
+                                    .font(.title)
+                                    .padding()
+                                Image("\(i.flag)")
+                                    .resizable()
+                                    .frame(width: 100, height: 100)
+                                    .padding()
+                                Text(i.description)
+                                    .font(.title)
+                                    .padding()
+                            }
+                        }
+                    }
                     
-                    ScrollView(.horizontal) {
-                        HStack(spacing: 10) {
+    ScrollView(.horizontal){
+                        HStack(spacing: 10){
                             ForEach(locations) { Local in
                                 Button(Local.nome) {
                                     Regiao.center = Local.coordenada
