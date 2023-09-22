@@ -1,0 +1,51 @@
+#include <Arduino.h>
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
+
+WiFiClient client;
+HTTPClient httpClient;
+
+const char *WIFI_SSID = "HackaTruck";
+const char *WIFI_PASSWORD = "eiaTruck2016";
+const char *URL = "ipdopc/umidade2";
+
+int output_value ;
+
+const int pinoSensor = A0; 
+int valorLido; 
+
+int analogSoloSeco = 400; 
+int analogSoloMolhado = 150; 
+int percSoloSeco = 0; 
+int percSoloMolhado = 100; 
+ 
+void setup(){ 
+    Serial.begin(9600); 
+    WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(500);
+        Serial.print(".");
+    }
+    Serial.println("Connected");
+    Serial.println("Lendo a umidade do solo..."); 
+    delay(2000);
+}
+
+void loop(){
+  valorLido = constrain(analogRead(pinoSensor),analogSoloMolhado,analogSoloSeco); 
+  valorLido = map(valorLido,analogSoloMolhado,analogSoloSeco,percSoloMolhado,percSoloSeco);
+  Serial.print("Umidade do solo: "); 
+  Serial.print(valorLido); 
+  Serial.println("%"); 
+  
+  String data = valorLido+String(output_value);
+
+    httpClient.begin(client, URL);
+    httpClient.addHeader("Content-Type", "application/x-www-form-urlencoded");
+    httpClient.POST(data);
+    String content = httpClient.getString();
+    httpClient.end();
+    Serial.print(output_value); 
+    Serial.println(content);
+    delay(5000);
+}
